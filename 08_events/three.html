@@ -13,17 +13,28 @@
     <button id="stop">Stop</button>
 </body>
 <script>
-    const starting = function () {
-        console.log('Start', Date.now());
-    }
+    let changeME; // Declare variable to hold the timeout ID
 
-    const start = setTimeout(starting, 1000)
+    const sayNitin = function () {
+        console.log("Nitin");
+    };
 
-    document.querySelector('start').addEventListener('click', function () {
-        setInterval(starting)
-    })
+    const changeText = function () {
+        document.querySelector('h1').innerHTML = "Learning Js";
+    };
 
+    // Start button functionality
+    document.querySelector('#start').addEventListener('click', function () {
+        setTimeout(sayNitin, 1000); // Start the timer to log "Nitin"
+        changeME = setTimeout(changeText, 5000); // Start the timer to change text
+        console.log("Started");
+    });
 
+    // Stop button functionality
+    document.querySelector('#stop').addEventListener('click', function () {
+        clearTimeout(changeME); // Stop the timer for changing text
+        console.log("STOPPED");
+    });
 </script>
 
 </html>
