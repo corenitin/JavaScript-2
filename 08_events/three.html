@@ -25,14 +25,14 @@
 
     // Start button functionality
     document.querySelector('#start').addEventListener('click', function () {
-        setTimeout(sayNitin, 1000); // Start the timer to log "Nitin"
-        changeME = setTimeout(changeText, 5000); // Start the timer to change text
+        setInterval(sayNitin, 1000, Date.now()); // Start the timer to log "Nitin"
+        changeME = setInterval(changeText, 5000); // Start the timer to change text
         console.log("Started");
     });
 
     // Stop button functionality
     document.querySelector('#stop').addEventListener('click', function () {
-        clearTimeout(changeME); // Stop the timer for changing text
+        clearInterval(changeME); // Stop the timer for changing text
         console.log("STOPPED");
     });
 </script>
